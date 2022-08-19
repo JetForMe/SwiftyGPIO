@@ -339,6 +339,7 @@ public final class RaspberryGPIO: GPIO {
             if mem_fd>0 {
                 break
             }
+            perror("Unable to open \(device)")
         }
         guard mem_fd > 0 else {
             fatalError("Can't open /dev/mem , use sudo!")
